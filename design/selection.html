@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=add,browse,chevron_right,close,groups,person,search,settings,team_dashboard,tune"
+    />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+  <body>
+    <div
+      class="page-container page-grid-layout sidebar--collapsed sidebar--hidden"
+    >
+      <header
+        class="header light-shadow flex justify-space-between flex-align-center"
+      >
+        <nav class="header-navbar flex-align-center">
+          <ion-icon name="arrow-back"></ion-icon>
+          <div class="header-logo">
+            <h1>ExpenseWise</h1>
+          </div>
+          <ul class="header-nav-links">
+            <li class="flex-align-center">
+              <span class="material-symbols-outlined">groups</span>
+              <strong>Teams</strong>
+            </li>
+            <li class="flex-align-center">
+              <span class="material-symbols-outlined">person</span>
+              <strong>Account</strong>
+            </li>
+          </ul>
+        </nav>
+        <div class="header-action">
+          <button class="btn btn-dark">+ Add Team</button>
+        </div>
+      </header>
+
+      <main class="main-content team-selection">
+        <div class="team-item light-shadow" id="item1">
+          <h1>ABC Company</h1>
+          <div class="team-details flex flex--column">
+            <span>Members: 10</span>
+            <span>Teams: 2</span>
+            <span>Total Expenses: ₱50,000</span>
+          </div>
+        </div>
+        <div class="team-item light-shadow" id="item2">
+          <h1>XYZ Company</h1>
+          <div class="team-details flex flex--column">
+            <span>Members: 5</span>
+            <span>Teams: 0</span>
+            <span>Total Expenses: ₱150,000</span>
+          </div>
+        </div>
+        <div class="team-item light-shadow" id="item3">
+          <h1>Amazon Company</h1>
+          <div class="team-details flex flex--column">
+            <span>Members: 2</span>
+            <span>Teams: 1</span>
+            <span>Total Expenses: ₱25,230</span>
+          </div>
+        </div>
+        <div class="team-item light-shadow" id="item4">
+          <h1>Facebook Inc</h1>
+          <div class="team-details flex flex--column">
+            <span>Members: 10</span>
+            <span>Teams: 1</span>
+            <span>Total Expenses: ₱50,000</span>
+          </div>
+        </div>
+        <div class="team-item light-shadow" id="item5">
+          <h1>Google Corp</h1>
+          <div class="team-details flex flex--column">
+            <span>Members: 1</span>
+            <span>Teams: 0</span>
+            <span>Total Expenses: ₱500</span>
+          </div>
+        </div>
+        <div class="team-item light-shadow" id="item6">
+          <h1>Mojang Inc</h1>
+          <div class="team-details flex flex--column">
+            <span>Members: 1</span>
+            <span>Teams: 0</span>
+            <span>Total Expenses: ₱10,000</span>
+          </div>
+        </div>
+        <div class="team-item light-shadow" id="item7">
+          <h1>ALS</h1>
+          <div class="team-details flex flex--column">
+            <span>Members: 10</span>
+            <span>Teams: 2</span>
+            <span>Total Expenses: ₱500,000</span>
+          </div>
+        </div>
+        <div class="team-item light-shadow" id="item8">
+          <h1>Microsoft Inc</h1>
+          <div class="team-details flex flex--column">
+            <span>Members: 10</span>
+            <span>Teams: 2</span>
+            <span>Total Expenses: ₱50,000</span>
+          </div>
+        </div>
+        <!-- <div class="team-item flex-center light-shadow">
+          <span class="team-item-add">+</span>
+        </div> -->
+      </main>
+    </div>
+
+    <script>
+      const items = [
+        "item1",
+        "item2",
+        "item3",
+        "item4",
+        "item5",
+        "item6",
+        "item7",
+        "item8",
+        "item9",
+      ];
+      items.forEach((elementId) => {
+        const item = document.getElementById(elementId);
+
+        item.addEventListener("click", () => {
+          item.classList.toggle("expand");
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,110 @@
+.team-layout {
+  min-width: auto;
+  padding: 0;
+}
+
+.team--container {
+  grid-template-columns: 1fr;
+}
+
+.team--table {
+  width: 100%;
+  font-size: 0.8rem;
+  border-spacing: 0 0.1rem;
+}
+
+.team--table td,
+.team--table th {
+  text-align: left;
+  padding: 1rem;
+  font-size: 0.6rem;
+}
+
+.team--table td:hover {
+  cursor: pointer;
+}
+
+.team--table tbody td button {
+  padding: 0.5rem 0;
+  font-size: 0.8rem;
+}
+
+.team--table td:first-child span {
+  padding: 0.2rem 1rem;
+  background-color: #b81968;
+  /* color: rgb(68, 6, 37); */
+  /* background-color: rgb(127, 196, 22); */
+  /* color: rgb(0, 87, 0); */
+  color: black;
+  border: 2px solid #b81968;
+  font-weight: 500;
+  border-radius: 20px;
+}
+
+.team--table tbody tr:nth-child(odd) {
+  background-color: #2525256b;
+}
+.team--table tbody tr:nth-child(even) {
+  background-color: rgba(128, 128, 128, 0.148);
+}
+
+.team--table thead tr th:not(th.except) {
+  text-align: left;
+  color: gray;
+  text-transform: uppercase;
+  font-weight: bold;
+  /* background-color: red; */
+}
+
+.team--table tbody tr:hover {
+  background-color: rgba(128, 128, 128, 0.334);
+}
+
+.new--team {
+  background-color: #202020;
+  padding: 1rem;
+  width: 20rem;
+  border-radius: 20px;
+}
+
+.new--team button {
+  margin-bottom: 0.1rem;
+}
+
+.team--form button {
+  margin-top: 0.2rem;
+}
+
+.new-team--container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+button.btn.config {
+  color: cyan;
+  background-color: #090707;
+  font-size: 0.6rem;
+  padding: 0.5rem;
+  font-weight: 500;
+}
+
+button.btn.config:hover {
+  background-color: #090707ca;
+  /* color: rgba(255, 166, 0, 0.75); */
+}
+button.btn.config:active {
+  /* color: rgba(255, 166, 0, 0.5); */
+  background-color: #090707;
+}
+
+button.btn.btn-team {
+  background-color: #101010;
+}
+button.btn.btn-team:hover {
+  background-color: #131313;
+}
+button.btn.btn-team:active {
+  background-color: #151515;
+}

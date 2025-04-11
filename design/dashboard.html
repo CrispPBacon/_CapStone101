@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=add,browse,chevron_right,close,groups,person,search,settings,team_dashboard,tune"
+    />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+  <body>
+    <div class="page-container page-grid-layout">
+      <!-- NAVBAR -->
+      <header class="header light-shadow">
+        <nav class="header-navbar flex-align-center">
+          <ion-icon name="arrow-back"></ion-icon>
+          <div class="header-logo">
+            <h1>ExpenseWise</h1>
+          </div>
+          <ul class="header-nav-links">
+            <li class="flex-align-center">
+              <span class="material-symbols-outlined">groups</span>
+              <strong>Teams</strong>
+            </li>
+            <li class="flex-align-center">
+              <span class="material-symbols-outlined">person</span>
+              <strong>Account</strong>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <!-- SIDEBAR -->
+      <aside class="sidebar light-shadow">
+        <div class="sidebar-profile-section flex-center flex--column">
+          <span>
+            <img
+              src="./assets/9e43206d-2845-40e3-ae3b-ed15d35e3a96.jfif"
+              alt="9e43206d-2845-40e3-ae3b-ed15d35e3a96"
+            />
+          </span>
+          <h1>Allan Soriano</h1>
+        </div>
+        <ul class="sidebar-nav-links">
+          <li class="flex-align-center">
+            <span class="material-symbols-outlined">browse</span>
+            <strong>Dashboard</strong>
+          </li>
+          <li class="flex-align-center">
+            <ion-icon name="card"></ion-icon>
+            <strong>Expenses</strong>
+          </li>
+          <li class="flex-align-center">
+            <ion-icon name="shield-checkmark"></ion-icon>
+            <strong>Approval</strong>
+          </li>
+          <li class="flex-align-center">
+            <ion-icon name="settings"></ion-icon>
+            <strong>Settings</strong>
+          </li>
+          <li class="flex-align-center">
+            <ion-icon name="exit"></ion-icon>
+            <strong>Logout</strong>
+          </li>
+        </ul>
+      </aside>
+
+      <!-- PAGE MAIN CONTENT -->
+      <!-- ?  LAST EDITED ON LAYOUT. -->
+      <!-- TODO: DASHBOARD -->
+      <main class="main-content light-shadow">
+        <div class="overview-section">
+          <div class="light-shadow">Here</div>
+          <div class="light-shadow">Here</div>
+          <div class="light-shadow">Here</div>
+        </div>
+        <div class="chart-section">
+          <span
+            ><canvas id="myChart" style="width: 100%; max-width: 700px"></canvas
+          ></span>
+        </div>
+      </main>
+    </div>
+    <script>
+      const myChart = new Chart("myChart", {
+        type: "bar",
+        data: {},
+        options: {},
+      });
+    </script>
+  </body>
+</html>
