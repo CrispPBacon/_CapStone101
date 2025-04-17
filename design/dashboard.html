@@ -16,7 +16,7 @@
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="css/index.css" />
   </head>
   <body>
@@ -79,24 +79,67 @@
       <!-- PAGE MAIN CONTENT -->
       <!-- ?  LAST EDITED ON LAYOUT. -->
       <!-- TODO: DASHBOARD -->
-      <main class="main-content light-shadow">
-        <div class="overview-section">
-          <div class="light-shadow">Here</div>
-          <div class="light-shadow">Here</div>
-          <div class="light-shadow">Here</div>
+      <main class="main-content light-shadow dashboard-section">
+        <div class="dashboard-container">
+          <span class="dashboard__title">Overview</span>
+          <div class="overview-section">
+            <div class="light-shadow overview-item">
+              <div>
+                <span>Total Expenses</span>
+                <h5>₱92,2000</h5>
+              </div>
+            </div>
+            <div class="light-shadow overview-item">
+              <div>
+                <span>Total Teams</span>
+                <h5>5</h5>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="chart-section">
-          <span
-            ><canvas id="myChart" style="width: 100%; max-width: 700px"></canvas
-          ></span>
+        <div class="dashboard-container">
+          <span class="dashboard__title">Expenses Distribution</span>
+          <div class="expense-overview flex">
+            <div class="chart-section">
+              <canvas
+                id="myChart"
+                style="width: 100%; max-width: 700px"
+              ></canvas>
+            </div>
+            <div class="recent__expense">
+              <h4>Recent Expenses</h4>
+            </div>
+            <div class="top-team__expense">
+              <h4>Top Spending Team</h4>
+            </div>
+          </div>
         </div>
       </main>
     </div>
+
     <script>
+      const xValues = ["Italy", "France", "Spain", "USA", "Argentina"];
+      const yValues = [55, 49, 44, 24, 15];
+      const barColors = ["#b91d47", "#00aba9", "#2b5797", "#e8c3b9", "#1e7145"];
+
       const myChart = new Chart("myChart", {
-        type: "bar",
-        data: {},
-        options: {},
+        type: "doughnut",
+        data: {
+          labels: xValues,
+          datasets: [
+            {
+              backgroundColor: barColors,
+              data: yValues,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: false },
+          },
+        },
       });
     </script>
   </body>
