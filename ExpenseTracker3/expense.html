@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=add,browse,chevron_right,close,groups,person,search,settings,team_dashboard,tune"
+    />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+  <body>
+    <div class="page-container page-grid-layout">
+      <!-- ! NAVBAR -->
+      <header class="header light-shadow">
+        <nav class="header-navbar flex-align-center">
+          <ion-icon name="arrow-back"></ion-icon>
+          <div class="header-logo">
+            <h1>ExpenseWise</h1>
+          </div>
+          <ul class="header-nav-links">
+            <li class="flex-align-center">
+              <span class="material-symbols-outlined">groups</span>
+              <strong>Teams</strong>
+            </li>
+            <li class="flex-align-center">
+              <span class="material-symbols-outlined">person</span>
+              <strong>Account</strong>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <!-- ! SIDEBAR -->
+      <aside class="sidebar light-shadow">
+        <div class="sidebar-profile-section flex-center flex--column">
+          <span>
+            <img
+              src="./assets/9e43206d-2845-40e3-ae3b-ed15d35e3a96.jfif"
+              alt="9e43206d-2845-40e3-ae3b-ed15d35e3a96"
+            />
+          </span>
+          <h1>Allan Soriano</h1>
+          <!-- <p
+            style="
+              font-size: 0.65rem;
+              margin-top: 0.5rem;
+              color: purple;
+              font-weight: 500;
+              background-color: white;
+              padding: 0 0.5rem;
+              border-radius: 10px;
+            "
+          >
+            Admin
+          </p> -->
+        </div>
+        <ul class="sidebar-nav-links">
+          <li class="flex-align-center">
+            <!-- <ion-icon name="home"></ion-icon> -->
+            <span class="material-symbols-outlined">browse</span>
+            <strong>Dashboard</strong>
+          </li>
+          <li class="flex-align-center">
+            <ion-icon name="card"></ion-icon>
+            <strong>Expenses</strong>
+          </li>
+          <li class="flex-align-center">
+            <ion-icon name="shield-checkmark"></ion-icon>
+            <strong>Approval</strong>
+          </li>
+          <li class="flex-align-center">
+            <ion-icon name="settings"></ion-icon>
+            <strong>Settings</strong>
+          </li>
+          <li class="flex-align-center">
+            <ion-icon name="exit"></ion-icon>
+            <strong>Logout</strong>
+          </li>
+        </ul>
+      </aside>
+
+      <!-- ! MAIN CONTENT PAGE -->
+      <main class="main-content light-shadow">
+        <div class="main-content-header flex-align-center light-shadow">
+          <h1>Transactions</h1>
+          <div class="header-controls flex-align-center">
+            <button class="btn btn-dark">+ Add New</button>
+            <span class="material-symbols-outlined">tune</span>
+          </div>
+        </div>
+        <div class="transaction-table">
+          <div class="transaction-row transaction-header">
+            <div class="transaction-item flex-align-center">Team</div>
+            <div class="transaction-item flex-align-center">Details</div>
+            <div class="transaction-item flex-align-center">Merchant</div>
+            <div class="transaction-item flex-align-center">Amount</div>
+            <div class="transaction-item flex-align-center">Date</div>
+            <div class="transaction-item flex-align-center">Member</div>
+          </div>
+          <div class="transaction-row">
+            <div class="transaction-item flex-align-center">
+              <span>Marketing</span>
+            </div>
+            <div class="transaction-item flex-align-center">
+              Marketing Materials
+            </div>
+            <div class="transaction-item flex-align-center">
+              Spiralytics inc.
+            </div>
+            <div class="transaction-item flex-align-center">₱100,000</div>
+            <div class="transaction-item flex-align-center">
+              December 12, 2024
+            </div>
+            <div class="transaction-item flex-align-center">Allan Soriano</div>
+          </div>
+          <div class="transaction-row">
+            <div class="transaction-item flex-align-center">
+              <span>Marketing</span>
+            </div>
+            <div class="transaction-item flex-align-center">
+              Marketing Materials
+            </div>
+            <div class="transaction-item flex-align-center">
+              Spiralytics inc.
+            </div>
+            <div class="transaction-item flex-align-center">₱100,000</div>
+            <div class="transaction-item flex-align-center">
+              December 12, 2024
+            </div>
+            <div class="transaction-item flex-align-center">Allan Soriano</div>
+          </div>
+          <div class="transaction-row">
+            <div class="transaction-item flex-align-center">
+              <span>Marketing</span>
+            </div>
+            <div class="transaction-item flex-align-center">
+              Marketing Materials
+            </div>
+            <div class="transaction-item flex-align-center">
+              Spiralytics inc.
+            </div>
+            <div class="transaction-item flex-align-center">₱100,000</div>
+            <div class="transaction-item flex-align-center">
+              December 12, 2024
+            </div>
+            <div class="transaction-item flex-align-center">Allan Soriano</div>
+          </div>
+          <div class="transaction-row">
+            <div class="transaction-item flex-align-center">
+              <span>Marketing</span>
+            </div>
+            <div class="transaction-item flex-align-center">
+              Marketing Materials
+            </div>
+            <div class="transaction-item flex-align-center">
+              Spiralytics inc.
+            </div>
+            <div class="transaction-item flex-align-center">₱100,000</div>
+            <div class="transaction-item flex-align-center">
+              December 12, 2024
+            </div>
+            <div class="transaction-item flex-align-center">Allan Soriano</div>
+          </div>
+          <div class="transaction-row">
+            <div class="transaction-item flex-align-center">
+              <span>Marketing</span>
+            </div>
+            <div class="transaction-item flex-align-center">
+              Marketing Materials
+            </div>
+            <div class="transaction-item flex-align-center">
+              Spiralytics inc.
+            </div>
+            <div class="transaction-item flex-align-center">₱100,000</div>
+            <div class="transaction-item flex-align-center">
+              December 12, 2024
+            </div>
+            <div class="transaction-item flex-align-center">Allan Soriano</div>
+          </div>
+          <div class="transaction-row">
+            <div class="transaction-item flex-align-center">
+              <span>Marketing</span>
+            </div>
+            <div class="transaction-item flex-align-center">
+              Marketing Materials
+            </div>
+            <div class="transaction-item flex-align-center">
+              Spiralytics inc.
+            </div>
+            <div class="transaction-item flex-align-center">₱100,000</div>
+            <div class="transaction-item flex-align-center">
+              December 12, 2024
+            </div>
+            <div class="transaction-item flex-align-center">Allan Soriano</div>
+          </div>
+          <div class="transaction-row">
+            <div class="transaction-item flex-align-center">
+              <span>Marketing</span>
+            </div>
+            <div class="transaction-item flex-align-center">
+              Marketing Materials
+            </div>
+            <div class="transaction-item flex-align-center">
+              Spiralytics inc.
+            </div>
+            <div class="transaction-item flex-align-center">₱100,000</div>
+            <div class="transaction-item flex-align-center">
+              December 12, 2024
+            </div>
+            <div class="transaction-item flex-align-center">Allan Soriano</div>
+          </div>
+          <div class="transaction-row">
+            <div class="transaction-item flex-align-center">
+              <span>Marketing</span>
+            </div>
+            <div class="transaction-item flex-align-center">
+              Marketing Materials
+            </div>
+            <div class="transaction-item flex-align-center">
+              Spiralytics inc.
+            </div>
+            <div class="transaction-item flex-align-center">₱100,000</div>
+            <div class="transaction-item flex-align-center">
+              December 12, 2024
+            </div>
+            <div class="transaction-item flex-align-center">Allan Soriano</div>
+          </div>
+          <div class="transaction-row">
+            <div class="transaction-item flex-align-center">
+              <span>Marketing</span>
+            </div>
+            <div class="transaction-item flex-align-center">
+              Marketing Materials
+            </div>
+            <div class="transaction-item flex-align-center">
+              Spiralytics inc.
+            </div>
+            <div class="transaction-item flex-align-center">₱100,000</div>
+            <div class="transaction-item flex-align-center">
+              December 12, 2024
+            </div>
+            <div class="transaction-item flex-align-center">Allan Soriano</div>
+          </div>
+          <div class="transaction-row">
+            <div class="transaction-item flex-align-center">
+              <span>Marketing</span>
+            </div>
+            <div class="transaction-item flex-align-center">
+              Marketing Materials
+            </div>
+            <div class="transaction-item flex-align-center">
+              Spiralytics inc.
+            </div>
+            <div class="transaction-item flex-align-center">₱100,000</div>
+            <div class="transaction-item flex-align-center">
+              December 12, 2024
+            </div>
+            <div class="transaction-item flex-align-center">Allan Soriano</div>
+          </div>
+          <div class="transaction-row">
+            <div class="transaction-item flex-align-center">
+              <span>Marketing</span>
+            </div>
+            <div class="transaction-item flex-align-center">
+              Marketing Materials
+            </div>
+            <div class="transaction-item flex-align-center">
+              Spiralytics inc.
+            </div>
+            <div class="transaction-item flex-align-center">₱100,000</div>
+            <div class="transaction-item flex-align-center">
+              December 12, 2024
+            </div>
+            <div class="transaction-item flex-align-center">Allan Soriano</div>
+          </div>
+          <div class="transaction-row">
+            <div class="transaction-item flex-align-center">
+              <span>Marketing</span>
+            </div>
+            <div class="transaction-item flex-align-center">
+              Marketing Materials
+            </div>
+            <div class="transaction-item flex-align-center">
+              Spiralytics inc.
+            </div>
+            <div class="transaction-item flex-align-center">₱100,000</div>
+            <div class="transaction-item flex-align-center">
+              December 12, 2024
+            </div>
+            <div class="transaction-item flex-align-center">Allan Soriano</div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- ADD EXPENSE MODAL -->
+    <div class="modal-overlay flex-center d-none">
+      <div class="modal-content light-shadow">
+        <div class="modal-header flex-center">
+          <h1>Add Expense</h1>
+          <span class="material-symbols-outlined modal-overlay__close"
+            >close</span
+          >
+        </div>
+        <div class="modal-body">
+          <form action="#" class="expense-form form-container">
+            <input type="text" class="form-control" placeholder="Details" />
+            <input type="text" class="form-control" placeholder="Merchant" />
+            <input type="text" class="form-control" placeholder="Amount" />
+            <input type="button" class="btn btn-dark" value="ADD" />
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
