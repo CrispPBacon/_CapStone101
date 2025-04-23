@@ -29,10 +29,10 @@
             <h1>ExpenseWise</h1>
           </div>
           <ul class="header-nav-links">
-            <li class="flex-align-center">
+            <!-- <li class="flex-align-center">
               <span class="material-symbols-outlined">groups</span>
               <strong>Teams</strong>
-            </li>
+            </li> -->
             <li class="flex-align-center">
               <span class="material-symbols-outlined">person</span>
               <strong>Account</strong>
@@ -60,6 +60,10 @@
           <li class="flex-align-center">
             <ion-icon name="card"></ion-icon>
             <strong>Expenses</strong>
+          </li>
+          <li class="flex-align-center">
+            <span class="material-symbols-outlined">groups</span>
+            <strong>Teams</strong>
           </li>
           <li class="flex-align-center">
             <ion-icon name="shield-checkmark"></ion-icon>
@@ -285,6 +289,10 @@
             {
               backgroundColor: barColors,
               data: yValues,
+              cutout: "80%",
+              // borderWidth: 1,
+              // borderRadius: 20,
+              offset: 10,
             },
           ],
         },

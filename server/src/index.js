@@ -1,24 +1,61 @@
 import express from "express";
 import cors from "cors";
+import path from "path";
+
+import router from "./route.js";
+
 import { connect } from "./config/db.js";
+import { errorHandlerMiddleware } from "./middlewares/error-handler.js";
+import { dirname } from "./utils/general-utils.js";
 
-import auth from "./routes/auth.js";
-import expensetracker from "./routes/expensetracker.js";
+import session from "express-session";
+import MongoDBStore from "connect-mongodb-session";
+const MongoDBStoreSession = MongoDBStore(session);
 
-// import { validateExpense } from "./middleware/validation.js";
-import { verifyAuth } from "./middleware/auth.js";
-
+/* APP Express Configuration */
 const app = express();
 const PORT = process.env.PORT || 3000;
 const HOST = process.env.HOST || "localhost";
 
-app.use([express.json(), express.urlencoded({ extended: true }), cors()]);
-app.use("/api/auth", auth);
-app.use("/api", verifyAuth, expensetracker);
+const corsConfig = { credentials: true, origin: "http://localhost:5173" };
 
-// app.get("/", validateExpense, (req, res) => {
-//   res.send("Successful!");
-// });
+/* Session and MongoDBStore Configuration */
+const store = new MongoDBStoreSession({
+  uri: process.env.DATABASE_URL,
+  collection: "sessions",
+  databaseName: process.env.DATABASE_NAME,
+});
+
+store.on("error", function (error) {
+  console.log(error);
+});
+
+const session_config = {
+  secret: process.env.SESSION_SECRET,
+  resave: false,
+  saveUninitialized: false,
+  cookie: {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === "production",
+    sameSite: "Strict",
+    maxAge: 1000 * 60 * 60 * 24 * 7,
+  },
+  store: store,
+};
+
+const session_log = (_req, _, next) => {
+  // console.log(_req.session);
+  next();
+};
+
+/* APP Express Router and Middlewares */
+app.use([
+  express.json(),
+  express.urlencoded({ extended: true }),
+  cors(corsConfig),
+]);
+app.use("/uploads", express.static(path.join(dirname, "..", "..", "uploads")));
+app.use([session(session_config), session_log, router, errorHandlerMiddleware]);
 
 app.listen(PORT, () => {
   console.log(`Server listening at http://${HOST}:${PORT}`);

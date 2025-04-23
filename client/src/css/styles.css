@@ -1,0 +1,67 @@
+.login-title {
+  margin-bottom: 0.5rem;
+}
+
+.profile-img img {
+  border-radius: 100px;
+  max-width: 5rem;
+  max-height: 5rem;
+}
+
+/* ****************************** */
+.forum-container {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.thread {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  margin-bottom: 15px;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: background 0.2s ease;
+}
+
+.thread:hover {
+  background-color: #f0f8ff;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 15px;
+  object-fit: cover;
+}
+
+.thread-info {
+  flex-grow: 1;
+}
+
+.thread-info a {
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: #2980b9;
+}
+
+.thread-info p {
+  color: #777;
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+
+.description {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 5px;
+  display: -webkit-box;
+  line-clamp: 1;
+  -webkit-line-clamp: 2; /* Limits to 2 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

@@ -58,6 +58,7 @@
   gap: 0.1rem;
   grid-template-rows: 10rem 1fr;
   overflow-y: auto;
+  --fs-default: 0.85rem;
 }
 
 .dashboard-container {

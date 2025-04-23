@@ -1,46 +1,35 @@
-import jwt from "jsonwebtoken";
-import dotenv from "dotenv";
+import User from "../models/user.js";
+import { NotFoundError, UnauthorizedError } from "../utils/errors.js";
 
-import { User } from "../models/user.js";
-import { CustomError } from "../utils/handleError.js";
+// ! USER CONTROLS
+export async function loginUser(username, password) {
+  const userData = await User.findOne({ username })
+    .select("-createdAt -updatedAt -__v -first_name -last_name")
+    .lean();
+  const userExists = Boolean(userData);
 
-dotenv.config();
+  if (!userExists) throw new NotFoundError("User does not exist");
+  if (userData.password !== password)
+    throw new UnauthorizedError("Incorrect Password");
 
-async function login(username, password) {
-  if (!username) throw new CustomError("Please enter your username!", 400);
-  if (!password) throw new CustomError("Please enter your password!", 400);
+  delete userData.password;
 
-  /* Match username and password */
-  const user_data = await User.findOne({ username });
-  if (!user_data) throw new CustomError("User not found!", 404);
-  if (user_data.password != password)
-    throw new CustomError("Password does not match!", 401);
-
-  /* Provide access token for authentication */
-  const payload = {
-    _id: user_data._id,
-    name: user_data.name,
-    username: user_data.username,
-  };
-
-  /* Sign the payload and return the token */
-  const token = jwt.sign({ payload }, process.env.JWT_SECRET, {
-    expiresIn: "24h",
-  });
-  console.log({ token });
-  return token;
+  return userData;
 }
 
-async function register({ name, age, username, password }) {
-  /* Prevent username duplication */
-  const existingUser = await User.findOne({ username });
-  if (existingUser) {
-    throw new CustomError("Username is already taken!", 400);
+// export async function change
+
+// ! CHECK IF THE USER [IS] LOGGED IN
+export async function isValidSession(session) {
+  if (!session || !session.user_id) return false;
+
+  const userData = await User.findById(session.user_id)
+    .select("-password -createdAt -updatedAt -__v -first_name -last_name")
+    .lean();
+  if (!userData) {
+    session.destroy();
+    return false;
   }
 
-  /* Save user information to database */
-  const user_data = new User({ name, age, username, password });
-  return await user_data.save();
+  return userData;
 }
-
-export default { login, register };
